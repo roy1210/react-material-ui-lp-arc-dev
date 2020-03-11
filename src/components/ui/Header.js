@@ -26,100 +26,14 @@ function ElevationScroll(props) {
   });
 }
 
-const useStyles = makeStyles(theme => ({
-  toolBarMargin: {
-    ...theme.mixins.toolbar,
-    marginBottom: "3em",
-    [theme.breakpoints.down('md')]: {
-      marginBottom: "2em"
-    },
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: "1.25em"
-    }
-  },
-  logo: {
-    height: "8em",
-    [theme.breakpoints.down('md')]: {
-      height: "7em"
-    },
-    [theme.breakpoints.down('xs')]: {
-      height: "5.5em"
-    }
-  },
-  tabContainer: {
-    marginLeft: "auto"
-  },
-  tab: {
-    ...theme.typography.tab,
-    minWidth: 10,
-    marginLeft: "24px"
-  },
-  button: {
-    ...theme.typography.estimate,
-    borderRadius: "50px",
-    marginLeft: "50px",
-    marginRight: "24px",
-    height: "44px",
-  },
-  logoContainer: {
-    padding: 0,
-    "&:hover": {
-      backgroundColor: "transparent"
-    }
-  },
-  menu: {
-    backgroundColor: theme.palette.common.blue,
-    color: "white",
-    borderRadius: 0
-  },
-  menuItem: {
-    ...theme.typography.tab,
-    opacity: 0.7,
-    "&:hover": {
-      opacity: 1
-    }
-  },
-  drawIconContainer: {
-    marginLeft: "auto",
-    "&:hover": {
-      backgroundColor: "transparent"
-    }
-  },
-  drawerIcon: {
-    height: "50px",
-    width: "50px"
-  },
-  drawer: {
-    backgroundColor: theme.palette.common.blue
-  },
-  drawerItem: {
-    ...theme.typography.tab,
-    color: "white",
-    opacity: 0.7
-  },
-  drawerItemSelected: {
-    "& . MuiListItemText-root": {
-      opacity: 1
-    }
-  },
 
-  drawerItemEstimate: {
-    backgroundColor: theme.palette.common.orange
-  },
-  appbar: {
-    zIndex: theme.zIndex.modal + 1
-  }
-}))
-
-export default function Header(props) {
+const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
   const classes = useStyles()
   const theme = useTheme()
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
   const matches = useMediaQuery(theme.breakpoints.down("md"))
 
   const [openDrawer, setOpenDrawer] = useState(false)
-
-  const [value, setValue] = useState(0)
   const [anchorEl, setAnchorEl] = useState(null)
   // Memo: e.currentTarget: Class
   const handleClick = (e) => {
@@ -144,7 +58,6 @@ export default function Header(props) {
     setValue(newValue)
   }
 
-  const [selectedIndex, setSelectedIndex] = useState(0)
   const menuOptions = [
     { name: "Services", link: Path.SERVICES, activeIndex: 1, selectedIndex: 0 },
     { name: 'Custom Software Development', link: Path.CUSTOM_SOFTWARE, activeIndex: 1, selectedIndex: 1 },
@@ -330,3 +243,90 @@ export default function Header(props) {
 
   )
 }
+
+export default Header
+
+const useStyles = makeStyles(theme => ({
+  toolBarMargin: {
+    ...theme.mixins.toolbar,
+    marginBottom: "3em",
+    [theme.breakpoints.down('md')]: {
+      marginBottom: "2em"
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: "1.25em"
+    }
+  },
+  logo: {
+    height: "8em",
+    [theme.breakpoints.down('md')]: {
+      height: "7em"
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: "5.5em"
+    }
+  },
+  tabContainer: {
+    marginLeft: "auto"
+  },
+  tab: {
+    ...theme.typography.tab,
+    minWidth: 10,
+    marginLeft: "24px"
+  },
+  button: {
+    ...theme.typography.estimate,
+    borderRadius: "50px",
+    marginLeft: "50px",
+    marginRight: "24px",
+    height: "44px",
+  },
+  logoContainer: {
+    padding: 0,
+    "&:hover": {
+      backgroundColor: "transparent"
+    }
+  },
+  menu: {
+    backgroundColor: theme.palette.common.blue,
+    color: "white",
+    borderRadius: 0
+  },
+  menuItem: {
+    ...theme.typography.tab,
+    opacity: 0.7,
+    "&:hover": {
+      opacity: 1
+    }
+  },
+  drawIconContainer: {
+    marginLeft: "auto",
+    "&:hover": {
+      backgroundColor: "transparent"
+    }
+  },
+  drawerIcon: {
+    height: "50px",
+    width: "50px"
+  },
+  drawer: {
+    backgroundColor: theme.palette.common.blue
+  },
+  drawerItem: {
+    ...theme.typography.tab,
+    color: "white",
+    opacity: 0.7
+  },
+  drawerItemSelected: {
+    "& . MuiListItemText-root": {
+      opacity: 1
+    }
+  },
+
+  drawerItemEstimate: {
+    backgroundColor: theme.palette.common.orange
+  },
+  appbar: {
+    zIndex: theme.zIndex.modal + 1
+  }
+}))
