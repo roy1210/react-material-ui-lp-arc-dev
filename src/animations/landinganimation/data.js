@@ -1,8 +1,8 @@
-import img_0 from "./img_0.png";
-import img_1 from "./img_1.png";
-import img_2 from "./img_2.png";
-import img_3 from "./img_3.png";
-import img_4 from "./img_4.png";
+import img_0 from "./img_0.png"
+import img_1 from "./img_1.png"
+import img_2 from "./img_2.png"
+import img_3 from "./img_3.png"
+import img_4 from "./img_4.png"
 
 export default {
   v: "5.5.5",
@@ -188,4 +188,4 @@ export default {
     }
   ],
   markers: []
-};
+}

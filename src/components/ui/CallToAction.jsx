@@ -1,11 +1,11 @@
-import { Grid, Typography, Button } from '@material-ui/core'
-import { makeStyles, useTheme } from '@material-ui/styles'
-import React from 'react'
-import ButtonArrow from './ButtonArrow'
+import { Grid, Typography, Button } from "@material-ui/core"
+import { makeStyles, useTheme } from "@material-ui/styles"
+import React from "react"
+import ButtonArrow from "./ButtonArrow"
 import background from "../../assets/background.jpg"
 import mobileBackground from "../../assets/mobileBackground.jpg"
-import { Path } from '../../constants'
-import { Link } from 'react-router-dom'
+import { Path } from "../../constants"
+import { Link } from "react-router-dom"
 
 const CallToAction = ({ isMatchSM, setValue }) => {
   const classes = useStyles()
@@ -35,25 +35,26 @@ const CallToAction = ({ isMatchSM, setValue }) => {
             <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }}>
               Take advantage of the 21 Century.
             </Typography>
-            <Grid
-              item
-              container
-              justify={isMatchSM ? "center" : undefined}
-            >
+            <Grid item container justify={isMatchSM ? "center" : undefined}>
               <Button
-                component={Link} to={Path.REVOLUTION}
+                component={Link}
+                to={Path.REVOLUTION}
                 variant="outlined"
                 className={classes.learnButton}
                 onClick={() => setValue(2)}
               >
                 <span className={classes.learnButtonSpan}>Learn More</span>
-                <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
+                <ButtonArrow
+                  width={10}
+                  height={10}
+                  fill={theme.palette.common.blue}
+                />
               </Button>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-      <Grid item  >
+      <Grid item>
         <Button
           component={Link}
           to={Path.ESTIMATE}
@@ -70,7 +71,7 @@ const CallToAction = ({ isMatchSM, setValue }) => {
 
 export default CallToAction
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   learnButton: {
     ...theme.typography.learnButton,
     fontSize: "0.6rem",

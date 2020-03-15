@@ -1,22 +1,22 @@
-import img0 from "./img_0.png";
-import img1 from "./img_1.png";
-import img2 from "./img_2.png";
-import img3 from "./img_3.png";
-import img4 from "./img_4.png";
-import img5 from "./img_5.png";
-import img6 from "./img_6.png";
-import img7 from "./img_7.png";
-import img8 from "./img_8.png";
-import img9 from "./img_9.png";
-import img10 from "./img_10.png";
-import img11 from "./img_11.png";
-import img12 from "./img_12.png";
-import img13 from "./img_13.png";
-import img14 from "./img_14.png";
-import img15 from "./img_15.png";
-import img16 from "./img_16.png";
-import img17 from "./img_17.png";
-import img18 from "./img_18.png";
+import img0 from "./img_0.png"
+import img1 from "./img_1.png"
+import img2 from "./img_2.png"
+import img3 from "./img_3.png"
+import img4 from "./img_4.png"
+import img5 from "./img_5.png"
+import img6 from "./img_6.png"
+import img7 from "./img_7.png"
+import img8 from "./img_8.png"
+import img9 from "./img_9.png"
+import img10 from "./img_10.png"
+import img11 from "./img_11.png"
+import img12 from "./img_12.png"
+import img13 from "./img_13.png"
+import img14 from "./img_14.png"
+import img15 from "./img_15.png"
+import img16 from "./img_16.png"
+import img17 from "./img_17.png"
+import img18 from "./img_18.png"
 
 export default {
   v: "5.5.9",
@@ -927,4 +927,4 @@ export default {
     }
   ],
   markers: []
-};
+}

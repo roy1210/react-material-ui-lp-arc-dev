@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from "@material-ui/core/styles"
 
 const arcBlue = "#0B72B9"
 const arcOrange = "#FFBA60"
@@ -22,7 +22,7 @@ export default createMuiTheme({
       fontFamily: "Raleway",
       textTransform: "none",
       fontWeight: 700,
-      fontSize: "1rem",
+      fontSize: "1rem"
     },
     estimate: {
       fontFamily: "Pacifico",
@@ -40,7 +40,7 @@ export default createMuiTheme({
     h3: {
       fontFamily: "Pacifico",
       fontSize: "2.5rem",
-      color: arcBlue,
+      color: arcBlue
     },
     h4: {
       fontFamily: "Raleway",
@@ -65,7 +65,7 @@ export default createMuiTheme({
       textTransform: "none",
       borderRadius: 50,
       fontFamily: "Roboto",
-      fontWeight: "bold",
+      fontWeight: "bold"
     }
   }
-});
+})

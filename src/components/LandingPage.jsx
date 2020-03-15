@@ -1,16 +1,23 @@
-import { Button, Grid, Typography, useMediaQuery, Card, CardContent } from '@material-ui/core'
-import { makeStyles, useTheme } from '@material-ui/styles'
-import React from 'react'
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  Card,
+  CardContent
+} from "@material-ui/core"
+import { makeStyles, useTheme } from "@material-ui/styles"
+import React from "react"
 import Lottie from "react-lottie"
-import animationData from '../animations/landinganimation/data'
+import animationData from "../animations/landinganimation/data"
 import customSoftwareIcon from "../assets/Custom Software Icon.svg"
 import mobileAppsIcon from "../assets/mobileIcon.svg"
 import websitesIcon from "../assets/websiteIcon.svg"
-import ButtonArrow from './ui/ButtonArrow'
+import ButtonArrow from "./ui/ButtonArrow"
 import revolutionBackground from "../assets/repeatingBackground.svg"
 import infoBackground from "../assets/infoBackground.svg"
-import CallToAction from './ui/CallToAction'
-import { Path } from '../constants'
+import CallToAction from "./ui/CallToAction"
+import { Path } from "../constants"
 import { Link } from "react-router-dom"
 
 const LandingPage = ({ setValue, setSelectedIndex }) => {
@@ -24,18 +31,19 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
     autoplay: false,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
+      preserveAspectRatio: "xMidYMid slice"
     }
-  };
+  }
   return (
     <Grid container direction="column" className={classes.mainContainer}>
-
       {/*-----Hero Block-----*/}
       <Grid item>
         <Grid container direction="row" justify="flex-end" alignItems="center">
           <Grid item sm className={classes.heroTextContainer}>
             <Typography align="center" variant="h2">
-              Bring West Coast Technology<br />to the Midwest
+              Bring West Coast Technology
+              <br />
+              to the Midwest
             </Typography>
             <Grid container justify="center" className={classes.buttonContainer}>
               <Grid item>
@@ -58,7 +66,11 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
                   onClick={() => setValue(2)}
                 >
                   <span className={classes.learnButtonSpan}>Learn More</span>
-                  <ButtonArrow width={14} height={14} fill={theme.palette.common.blue} />
+                  <ButtonArrow
+                    width={14}
+                    height={14}
+                    fill={theme.palette.common.blue}
+                  />
                 </Button>
               </Grid>
             </Grid>
@@ -67,7 +79,6 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
           <Grid item sm className={classes.animation}>
             <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
           </Grid>
-
         </Grid>
       </Grid>
 
@@ -87,31 +98,35 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
               textAlign: isMatchSM ? "center" : undefined
             }}
           >
-            <Typography variant="h4">
-              Custom Software Development
-          </Typography>
+            <Typography variant="h4">Custom Software Development</Typography>
             <Typography variant="subtitle1">
               Save Energy. Save Time. Save Money
-          </Typography>
+            </Typography>
             <Typography variant="subtitle1" className={classes.subtitle}>
-              Complete digital solutions, from investigation to {" "}
-              <span className={classes.specialText}>
-                celebration.
-              </span>
+              Complete digital solutions, from investigation to{" "}
+              <span className={classes.specialText}>celebration.</span>
             </Typography>
             <Button
               component={Link}
               to={Path.CUSTOM_SOFTWARE}
               variant="outlined"
               className={classes.learnButton}
-              onClick={() => { setValue(1); setSelectedIndex(1) }}
+              onClick={() => {
+                setValue(1)
+                setSelectedIndex(1)
+              }}
             >
               <span className={classes.learnButtonSpan}>Learn More</span>
               <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
             </Button>
           </Grid>
           <Grid item>
-            <img src={customSoftwareIcon} alt="custom software icon" className={classes.icon} />
+            <img
+              src={customSoftwareIcon}
+              alt="custom software icon"
+              className={classes.icon}
+            />
+
           </Grid>
         </Grid>
       </Grid>
@@ -123,16 +138,11 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
           className={classes.serviceContainer}
           justify={isMatchSM ? "center" : "flex-end"}
         >
-          <Grid
-            item
-            style={{ textAlign: isMatchSM ? "center" : undefined }}
-          >
-            <Typography variant="h4">
-              iOS/Android Development
-          </Typography>
+          <Grid item style={{ textAlign: isMatchSM ? "center" : undefined }}>
+            <Typography variant="h4">iOS/Android Development</Typography>
             <Typography variant="subtitle1">
               Extend Functionality. Extend Access. Increase Engagement.
-          </Typography>
+            </Typography>
             <Typography variant="subtitle1" className={classes.subtitle}>
               Integrate your web experience or create a standalone app
               {isMatchSM ? null : <br />}
@@ -143,17 +153,21 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
               to={Path.MOBILE_APPS}
               variant="outlined"
               className={classes.learnButton}
-              onClick={() => { setValue(1); setSelectedIndex(2) }}
+              onClick={() => {
+                setValue(1)
+                setSelectedIndex(2)
+              }}
             >
               <span className={classes.learnButtonSpan}>Learn More</span>
               <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
             </Button>
           </Grid>
-          <Grid
-            item
-            style={{ marginRight: isMatchSM ? 0 : "4em", }}
-          >
-            <img src={mobileAppsIcon} alt="mobile app icon" className={classes.icon} />
+          <Grid item style={{ marginRight: isMatchSM ? 0 : "4em" }}>
+            <img
+              src={mobileAppsIcon}
+              alt="mobile app icon"
+              className={classes.icon}
+            />
           </Grid>
         </Grid>
       </Grid>
@@ -172,9 +186,7 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
               textAlign: isMatchSM ? "center" : undefined
             }}
           >
-            <Typography variant="h4">
-              website Development
-            </Typography>
+            <Typography variant="h4">website Development</Typography>
             <Typography variant="subtitle1">
               Reach More, Discover More, Sell More.
             </Typography>
@@ -186,14 +198,21 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
               to={Path.WEBSITES}
               variant="outlined"
               className={classes.learnButton}
-              onClick={() => { setValue(1); setSelectedIndex(3) }}
+              onClick={() => {
+                setValue(1)
+                setSelectedIndex(3)
+              }}
             >
               <span className={classes.learnButtonSpan}>Learn More</span>
               <ButtonArrow width={14} height={14} fill={theme.palette.common.blue} />
             </Button>
           </Grid>
           <Grid item>
-            <img src={websitesIcon} alt="custom software icon" className={classes.icon} />
+            <img
+              src={websitesIcon}
+              alt="custom software icon"
+              className={classes.icon}
+            />
           </Grid>
         </Grid>
       </Grid>
@@ -212,12 +231,13 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
                 <Grid item>
                   <Typography variant="h3" gutterBottom>
                     The Revolution
-                </Typography>
+                  </Typography>
                 </Grid>
                 <Grid item>
-                  <Typography variant="subtitle1" >
-                    Visionary insights coupled with cutting-edge technology is a recipe for revolution.
-                </Typography>
+                  <Typography variant="subtitle1">
+                    Visionary insights coupled with cutting-edge technology is a
+                    recipe for revolution.
+                  </Typography>
                   <Button
                     component={Link}
                     to={Path.REVOLUTION}
@@ -226,7 +246,11 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
                     onClick={() => setValue(2)}
                   >
                     <span className={classes.learnButtonSpan}>Learn More</span>
-                    <ButtonArrow width={14} height={14} fill={theme.palette.common.blue} />
+                    <ButtonArrow
+                      width={14}
+                      height={14}
+                      fill={theme.palette.common.blue}
+                    />
                   </Button>
                 </Grid>
               </Grid>
@@ -249,7 +273,7 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
             item
             container
             style={{ textAlign: isMatchXS ? "center" : "inherit" }}
-            direction={isMatchXS ? "column" : 'row'}
+            direction={isMatchXS ? "column" : "row"}
           >
             <Grid
               item
@@ -261,11 +285,14 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
                 direction="column"
                 style={{ marginBottom: isMatchXS ? "10em" : 0 }}
               >
-                <Typography variant="h2" style={{ color: "white" }}>About Us</Typography>
+                <Typography variant="h2" style={{ color: "white" }}>
+                  About Us
+                </Typography>
                 <Typography variant="subtitle2">Let's get personal.</Typography>
                 <Grid item>
                   <Button
-                    component={Link} to={Path.ABOUT}
+                    component={Link}
+                    to={Path.ABOUT}
                     variant="outlined"
                     style={{ color: "white", borderColor: "white" }}
                     className={classes.learnButton}
@@ -286,8 +313,15 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
               }}
             >
               <Grid container direction="column">
-                <Typography variant="h2" style={{ color: "white" }}>Contact Us</Typography>
-                <Typography variant="subtitle2">Say Hello! <span role="img" aria-label="waiving hand">👋</span></Typography>
+                <Typography variant="h2" style={{ color: "white" }}>
+                  Contact Us
+                </Typography>
+                <Typography variant="subtitle2">
+                  Say Hello!{" "}
+                  <span role="img" aria-label="waiving hand">
+                    👋
+                  </span>
+                </Typography>
                 <Grid item>
                   <Button
                     component={Link}
@@ -311,14 +345,13 @@ const LandingPage = ({ setValue, setSelectedIndex }) => {
       <Grid item>
         <CallToAction setValue={setValue} isMatchSM={isMatchSM} />
       </Grid>
-
-    </Grid >
+    </Grid>
   )
 }
 
 export default LandingPage
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   animation: {
     maxWidth: "50em",
     minWidth: "20em",
@@ -355,7 +388,7 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.learnButton,
     fontSize: "0.9rem",
     height: 44,
-    width: 144,
+    width: 144
     // '& span': {
     //   color: "red"
     // }

@@ -8,4 +8,4 @@ export const Path = {
   ABOUT: "/about",
   CONTACT: "/contact",
   ESTIMATE: "/estimate"
-};
+}

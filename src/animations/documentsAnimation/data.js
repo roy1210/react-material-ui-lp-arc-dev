@@ -1,5 +1,5 @@
-import img0 from "./img_0.png";
-import img1 from "./img_1.png";
+import img0 from "./img_0.png"
+import img1 from "./img_1.png"
 
 export default {
   v: "5.5.9",
@@ -108,4 +108,4 @@ export default {
     }
   ],
   markers: []
-};
+}

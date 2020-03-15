@@ -1,31 +1,37 @@
-import { IconButton, SwipeableDrawer, useMediaQuery, useScrollTrigger, List, ListItem, ListItemText } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
-import Toolbar from '@material-ui/core/Toolbar';
-import MenuIcon from "@material-ui/icons/Menu";
-import { makeStyles, useTheme } from '@material-ui/styles';
-import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
-import { Path } from '../../constants';
-
+import {
+  IconButton,
+  SwipeableDrawer,
+  useMediaQuery,
+  useScrollTrigger,
+  List,
+  ListItem,
+  ListItemText
+} from "@material-ui/core"
+import AppBar from "@material-ui/core/AppBar"
+import Button from "@material-ui/core/Button"
+import Menu from "@material-ui/core/Menu"
+import MenuItem from "@material-ui/core/MenuItem"
+import Tab from "@material-ui/core/Tab"
+import Tabs from "@material-ui/core/Tabs"
+import Toolbar from "@material-ui/core/Toolbar"
+import MenuIcon from "@material-ui/icons/Menu"
+import { makeStyles, useTheme } from "@material-ui/styles"
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import logo from "../../assets/logo.svg"
+import { Path } from "../../constants"
 
 function ElevationScroll(props) {
-  const { children } = props;
+  const { children } = props
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 0,
-  });
+    threshold: 0
+  })
 
   return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
+    elevation: trigger ? 4 : 0
+  })
 }
-
 
 const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
   const classes = useStyles()
@@ -60,28 +66,43 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
 
   const menuOptions = [
     { name: "Services", link: Path.SERVICES, activeIndex: 1, selectedIndex: 0 },
-    { name: 'Custom Software Development', link: Path.CUSTOM_SOFTWARE, activeIndex: 1, selectedIndex: 1 },
-    { name: "iOS/Android Development", link: Path.MOBILE_APPS, activeIndex: 1, selectedIndex: 2 },
-    { name: "Website Development", link: Path.WEBSITES, activeIndex: 1, selectedIndex: 3 }
+    {
+      name: "Custom Software Development",
+      link: Path.CUSTOM_SOFTWARE,
+      activeIndex: 1,
+      selectedIndex: 1
+    },
+    {
+      name: "iOS/Android Development",
+      link: Path.MOBILE_APPS,
+      activeIndex: 1,
+      selectedIndex: 2
+    },
+    {
+      name: "Website Development",
+      link: Path.WEBSITES,
+      activeIndex: 1,
+      selectedIndex: 3
+    }
   ]
 
   const routes = [
     { name: "Home", link: Path.ROOT, activeIndex: 0 },
     {
-      name: 'Services',
+      name: "Services",
       link: Path.SERVICES,
-      activeIndex: 1, ariaOwns: anchorEl ? "simple-menu" : undefined,
+      activeIndex: 1,
+      ariaOwns: anchorEl ? "simple-menu" : undefined,
       ariaPopup: anchorEl ? "true" : undefined,
-      mouseOver: (event) => handleClick(event),
+      mouseOver: (event) => handleClick(event)
     },
     { name: "The Revolution", link: Path.REVOLUTION, activeIndex: 2 },
     { name: "About US", link: Path.ABOUT, activeIndex: 3 },
     { name: "Contact US", link: Path.CONTACT, activeIndex: 4 }
   ]
 
-
   useEffect(() => {
-    [...menuOptions, ...routes].forEach(route => {
+    ;[...menuOptions, ...routes].forEach((route) => {
       switch (window.location.pathname) {
         case `${route.link}`:
           if (value !== route.activeIndex) {
@@ -90,13 +111,15 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
               setSelectedIndex(route.selectedIndex)
             }
           }
-          break;
-        case '/estimate':
+          break
+        case "/estimate":
           setValue(5)
+          break
         default:
-          break;
+          break
       }
-    });
+    })
+    // eslint-disable-next-line
   }, [value, menuOptions, selectedIndex, routes])
 
   const tabs = (
@@ -175,10 +198,13 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
       >
         <div className={classes.toolBarMargin} />
         <List disablePadding>
-          {routes.map(route => (
+          {routes.map((route) => (
             <ListItem
               key={`${route.name}`}
-              onClick={() => { setOpenDrawer(false); setValue(route.activeIndex) }}
+              onClick={() => {
+                setOpenDrawer(false)
+                setValue(route.activeIndex)
+              }}
               divider
               button
               component={Link}
@@ -186,29 +212,29 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
               selected={value === route.activeIndex}
               classes={{ selected: classes.drawerItemSelected }}
             >
-              <ListItemText
-                className={classes.drawerItem}
-                disableTypography
-              >
+              <ListItemText className={classes.drawerItem} disableTypography>
                 {route.name}
               </ListItemText>
             </ListItem>
           ))}
 
           <ListItem
-            onClick={() => { setOpenDrawer(false); setValue(5) }}
+            onClick={() => {
+              setOpenDrawer(false)
+              setValue(5)
+            }}
             divider
             button
             component={Link}
             to={Path.ESTIMATE}
             className={classes.drawerItemEstimate}
             selected={value === 5}
-            classes={{ root: classes.drawerItemEstimated, selected: classes.drawerItemSelected }}
+            classes={{
+              root: classes.drawerItemEstimated,
+              selected: classes.drawerItemSelected
+            }}
           >
-            <ListItemText
-              className={classes.drawerItem}
-              disableTypography
-            >
+            <ListItemText className={classes.drawerItem} disableTypography>
               Free Estimate
             </ListItemText>
           </ListItem>
@@ -230,7 +256,8 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
         <AppBar position="fixed" className={classes.appbar}>
           <Toolbar disableGutters>
             <Button
-              component={Link} to={Path.ROOT}
+              component={Link}
+              to={Path.ROOT}
               className={classes.logoContainer}
               onClick={() => setValue(0)}
               disableRipple
@@ -243,29 +270,28 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
       </ElevationScroll>
       <div className={classes.toolBarMargin} />
     </React.Fragment>
-
   )
 }
 
 export default Header
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   toolBarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "3em",
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       marginBottom: "2em"
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       marginBottom: "1.25em"
     }
   },
   logo: {
     height: "8em",
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       height: "7em"
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       height: "5.5em"
     }
   },
