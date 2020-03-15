@@ -24,7 +24,13 @@ function App() {
           <Route
             exact
             path={Path.ROOT}
-            component={LandingPage}
+            render={(props) => (
+              <LandingPage
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
