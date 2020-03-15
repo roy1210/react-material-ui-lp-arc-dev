@@ -61,7 +61,7 @@ const Header = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
   const menuOptions = [
     { name: "Services", link: Path.SERVICES, activeIndex: 1, selectedIndex: 0 },
     { name: 'Custom Software Development', link: Path.CUSTOM_SOFTWARE, activeIndex: 1, selectedIndex: 1 },
-    { name: "Mobile APP Development", link: Path.MOBILE_APPS, activeIndex: 1, selectedIndex: 2 },
+    { name: "iOS/Android Development", link: Path.MOBILE_APPS, activeIndex: 1, selectedIndex: 2 },
     { name: "Website Development", link: Path.WEBSITES, activeIndex: 1, selectedIndex: 3 }
   ]
 
@@ -280,6 +280,9 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "50px",
     marginRight: "24px",
     height: "44px",
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.light
+    }
   },
   logoContainer: {
     padding: 0,

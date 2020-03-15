@@ -61,7 +61,7 @@ const Footer = ({ value, setValue, selectedIndex, setSelectedIndex }) => {
                 to={Path.MOBILE_APPS}
                 onClick={() => { setValue(1); setSelectedIndex(2) }}
               >
-                Mobile App Development
+                iOS/Android Development
             </Grid>
               <Grid item className={classes.link}
                 component={Link}

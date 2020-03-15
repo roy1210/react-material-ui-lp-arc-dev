@@ -5,6 +5,7 @@ import { Path } from "../constants";
 import Header from "./ui/Header";
 import theme from "./ui/theme";
 import Footer from "./ui/Footer";
+import LandingPage from './LandingPage';
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -23,7 +24,7 @@ function App() {
           <Route
             exact
             path={Path.ROOT}
-            component={() => <div style={{ height: "2000px" }}>Home</div>}
+            component={LandingPage}
           />
           <Route
             exact
